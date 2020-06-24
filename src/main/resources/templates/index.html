@@ -7,8 +7,16 @@
 <body>
 <h1>Home Page</h1>
 <div>
-  <h2 th:text="${movie.name}"></h2>
-  <h2 th:text="${movie.rating}"></h2>
+  <h2 th:text="'Movie: ' + ${movie.name}"></h2>
+  <h2 th:text="'Rating: ' + ${movie.rating}"></h2>
+    <form th:action="@{'/home/search?movieId='}" method="get">
+        <div class="advanced-search">
+            <div class="input-group">
+                <input type="text" name="movieId" style="color:black" placeholder="Movie Id">
+                <button type="submit">Search</button>
+            </div>
+        </div>
+    </form>
 </div>
 
 </body>

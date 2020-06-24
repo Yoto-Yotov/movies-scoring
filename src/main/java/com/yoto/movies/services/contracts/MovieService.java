@@ -2,5 +2,6 @@ package com.yoto.movies.services.contracts;
 
 public interface MovieService {
 
-    int getMovieAvrgRating();
+    int getMovieAvrgRating(String imdbMovieId);
+
 }

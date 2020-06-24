@@ -12,7 +12,7 @@ public class UtilTests {
         String resultUrl = UrlParser.parseUrl("tt0944947");
 
         //Assert
-        Assertions.assertEquals("http://www.omdbapi.com/?apikey=" + System.getProperty("OMDB_APIKEY") + "&i=tt0944947", resultUrl);
+        Assertions.assertEquals("http://www.omdbapi.com/?apikey=" + System.getenv("OMDB_APIKEY") + "&i=tt0944947", resultUrl);
     }
 
 }
