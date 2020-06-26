@@ -3,6 +3,7 @@ package com.yoto.movies.services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.yoto.movies.exceptions.MovieNotFoundException;
 import com.yoto.movies.models.imdbmodel.Movie;
 import com.yoto.movies.services.contracts.MovieService;
 import com.yoto.movies.utils.UrlParser;
@@ -32,7 +33,7 @@ public class MovieServiceImpl implements MovieService {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.readTree(response.getBody());
         if(root.has("Error")) {
-            //to do throw exception
+            throw new MovieNotFoundException("id", imdbMovieId);
         }
 
         return restTemplate.getForObject(resultUrl, Movie.class);
