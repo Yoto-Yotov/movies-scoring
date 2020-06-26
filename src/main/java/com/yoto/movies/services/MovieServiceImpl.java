@@ -32,7 +32,7 @@ public class MovieServiceImpl implements MovieService {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.readTree(response.getBody());
         if(root.has("Error")) {
-            //to do throw exception 
+            //to do throw exception
         }
 
         return restTemplate.getForObject(resultUrl, Movie.class);
