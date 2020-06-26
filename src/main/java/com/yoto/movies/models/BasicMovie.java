@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Movie {
+public class BasicMovie {
 
     private String name;
     private int rating;
