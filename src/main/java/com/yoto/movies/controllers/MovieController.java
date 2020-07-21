@@ -26,8 +26,7 @@ public class MovieController {
 
     @GetMapping("/home/search")
     public String showMovieAverageRating(@RequestParam("movieId") String movieId, Model model) {
-        model.addAttribute("movie", new BasicMovie("Star Wars", 5));
-        model.addAttribute("rating", movieService.getMovieAvrgRating(movieId));
+        model.addAttribute("movie", movieService.getBasicMovie(movieId));
         return "index";
     }
 }

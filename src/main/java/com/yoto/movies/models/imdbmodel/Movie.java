@@ -13,4 +13,6 @@ public class Movie {
     @JsonProperty("Ratings")
     List<Rating> ratings;
 
+    @JsonProperty("Title")
+    String title;
 }

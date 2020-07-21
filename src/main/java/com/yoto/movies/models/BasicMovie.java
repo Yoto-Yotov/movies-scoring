@@ -8,6 +8,6 @@ import lombok.Data;
 public class BasicMovie {
 
     private String name;
-    private int rating;
+    private double rating;
 
 }
