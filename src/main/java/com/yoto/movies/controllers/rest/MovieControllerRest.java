@@ -1,6 +1,5 @@
 package com.yoto.movies.controllers.rest;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.yoto.movies.exceptions.MovieNotFoundException;
 import com.yoto.movies.models.imdbmodel.Movie;
 import com.yoto.movies.services.contracts.MovieService;
@@ -32,8 +31,8 @@ public class MovieControllerRest {
     public Movie getMovie(@RequestParam("id") String movieId) {
         try {
             return movieService.getMovieInfo(movieId);
-        } catch (JsonProcessingException | MovieNotFoundException e) {
-            throw new ResponseStatusException(HttpStatus.OK, e.getMessage());
+        } catch (MovieNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Movie not found", e);
         }
     }
 
